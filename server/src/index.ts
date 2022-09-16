@@ -1,12 +1,5 @@
-import axios from 'axios'
-import {apikey} from './config'
+import { apikey } from './config';
 
-const url: string = `https://api.openweathermap.org/data/2.5/weather?lat=27.2046&lon=77.4977&appid=${apikey}`;
-
-axios.get(url)
-  .then(function (response) {
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
+export default function url(location: string[], unit: string): string {
+  return `https://api.openweathermap.org/data/2.5/weather?lat=${location[0]}&lon=${location[1]}&appid=${apikey}&units=${unit}`;
+}

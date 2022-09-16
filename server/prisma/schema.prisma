@@ -10,10 +10,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Task {
   id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  name  String
+  descripting String?
   createdAt   DateTime       @default(now())
   updatedAt   DateTime       @updatedAt
 }
