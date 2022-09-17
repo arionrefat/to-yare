@@ -1,3 +1,3 @@
 # TODO APP
 
-# Tech stack: React, Mui, typesctipt, Prisma
+# Tech stack: React, Mui, typescript , Prisma
