@@ -1,6 +1,8 @@
 # TODO APP
 
-# Tech stack: **NextJs, Axios**
+# Tech stack:
+1. **NextJs
+2. Axios**
 
 # Feature to implement(will update):
 1. Make a dashboard that will show:
