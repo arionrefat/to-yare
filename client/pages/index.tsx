@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import axios from "axios";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import axios from 'axios';
 
 function WeatherApp() {
   const [temp, setTemp] = useState(null);
@@ -8,10 +8,10 @@ function WeatherApp() {
   const [weather, setWeather] = useState(null);
 
   useEffect(() => {
-    axios.get("api/getWeather").then((response) => {
+    axios.get('api/getWeather').then((response) => {
       setTemp(response.data.main.temp);
       setFeelsLike(response.data.main.feels_like);
-      setWeather(response.data.weather);
+      setWeather(response.data.weather[0].description);
     });
   }, []);
 
@@ -19,11 +19,11 @@ function WeatherApp() {
 
   return (
     <div>
-      <h1>{temp}</h1>
-      <h1>{feelLike}</h1>
-      {/* <h1>{weather}</h1> */}
+      <h1>Today's temperature is {temp}°C</h1>
+      <h1>It feels like {feelLike}°C</h1>
+      <h1>The sky is looking {weather}</h1>
       <button>
-        <Link href="/todo">Todo Page</Link>
+        <Link href='/todo'>Todo Page</Link>
       </button>
     </div>
   );
