@@ -2,6 +2,7 @@ import axios from "axios";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const apikey = process.env.OPENWEATHER_API!;
+console.log(apikey);
 
 function url(location: string[], unit: string): string {
   return `https://api.openweathermap.org/data/2.5/weather?lat=${location[0]}&lon=${location[1]}&appid=${apikey}&units=${unit}`;
