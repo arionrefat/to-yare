@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
+import Clock from './components/clock';
 
 function WeatherApp() {
   const [temp, setTemp] = useState(null);
@@ -19,6 +20,7 @@ function WeatherApp() {
 
   return (
     <div>
+      <Clock />
       <h1>Today's temperature is {temp}°C</h1>
       <h1>It feels like {feelLike}°C</h1>
       <h1>The sky is looking {weather}</h1>
