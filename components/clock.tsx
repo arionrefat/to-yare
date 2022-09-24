@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 
 const Clock: React.FC = () => {
@@ -26,8 +27,8 @@ const Clock: React.FC = () => {
   return (
     <>
       <div>
-        <h1>{dates}</h1>
-        <h1>{clock}</h1>
+        <Typography variant='h4' color='#8FBCBB'>{dates}</Typography>
+        <Typography variant='h4' color='#8FBCBB'>{clock}</Typography>
       </div>
     </>
   );

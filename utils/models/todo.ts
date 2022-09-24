@@ -10,7 +10,10 @@ export async function createTodo(payload: Pick<Todo, 'userId' | 'task'>) {
 }
 
 export async function updateTodo(payload: Pick<Todo, 'id' | 'task'>) {
-  return await axios.put<any, AxiosResponse<any, Todo>>(`api/todo/${payload.id}`, { task: payload.task });
+  return await axios.put<any, AxiosResponse<any, Todo>>(
+    `api/todo/${payload.id}`,
+    { task: payload.task }
+  );
 }
 
 export async function deleteTodo(id: string) {
