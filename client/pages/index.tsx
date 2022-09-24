@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Clock from './dashboard/components/clock';
+import Clock from '../components/clock';
 import Button from '@mui/material/Button';
 import { Box, Stack, Typography } from '@mui/material';
 
