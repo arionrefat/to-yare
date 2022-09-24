@@ -9,11 +9,7 @@ const TodoList: React.FC<{
   return (
     <ul>
       {props.items.map((item) => (
-        <TodoItem
-          key={item.id}
-          text={item.text}
-          onRemovedTodo={props.onRemovedTodo.bind(null, item.id)}
-        />
+        <TodoItem key={item.id} text={item.task} onRemovedTodo={props.onRemovedTodo.bind(null, item.id)} />
       ))}
     </ul>
   );
