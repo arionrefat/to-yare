@@ -42,7 +42,7 @@ function WeatherApp() {
           backgroundColor: 'primary.dark',
         }}
       >
-        <Typography variant='h6'>It feels like {feelLike}°C</Typography>
+        <Typography variant='h6'>{`It feels like ${feelLike}°C`}</Typography>
       </Box>
 
       <Box
@@ -54,7 +54,7 @@ function WeatherApp() {
           backgroundColor: 'primary.dark',
         }}
       >
-        <Typography variant='h6'>Today's temperature is {temp}°C</Typography>
+        <Typography variant='h6'>{`Today's temperature is ${temp}°C`}</Typography>
       </Box>
 
       <Box
