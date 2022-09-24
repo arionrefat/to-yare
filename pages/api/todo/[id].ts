@@ -6,7 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (req.method === "PUT") {
       const todo = await prisma.todo.update({
         where: { id: req?.query?.id as string },
-        data: { task: req.body },
+        data: { task: req.body.task },
       });
       res.status(200).json(todo);
     }

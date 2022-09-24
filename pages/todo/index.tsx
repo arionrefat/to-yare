@@ -1,12 +1,25 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import NewTodo from "../../components/NewTodo";
 import TodoList from "../../components/TodoList";
-import { createTodo, deleteTodo, getTodo } from "../../utils/models/todo";
+import { createTodo, deleteTodo, getTodo, updateTodo } from "../../utils/models/todo";
 
 function Todos() {
   const queryClient = useQueryClient();
 
   const { data } = useQuery(["todos"], getTodo);
+
+  const updateTodoM = useMutation(updateTodo, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(["todos"]);
+    },
+  });
+
+  const updateTodoHandler = async (todoId: string) => {
+    const enteredName = prompt("Please enter your updated todo") as string;
+    if (enteredName) {
+      await updateTodoM.mutateAsync({ id: todoId, task: enteredName });
+    }
+  };
 
   const createTodoM = useMutation(createTodo, {
     onSuccess: () => {
@@ -32,7 +45,7 @@ function Todos() {
   return (
     <div>
       <NewTodo onAddTodo={addTodoHandler}></NewTodo>
-      <TodoList items={data?.data ?? []} onRemovedTodo={removeTodoHandler} />
+      <TodoList items={data?.data ?? []} onRemovedTodo={removeTodoHandler} onUpdatedTodo={updateTodoHandler} />
     </div>
   );
 }
