@@ -24,7 +24,7 @@ function WeatherApp() {
       <Box
         component='span'
         sx={{
-          m: 5,
+          m: 2,
           p: 5,
           flexDirection: 'center',
           backgroundColor: 'primary.dark',
@@ -48,15 +48,27 @@ function WeatherApp() {
       <Box
         component='span'
         sx={{
-          m: 5,
+          m: 1,
           p: 5,
           flexDirection: 'center',
           backgroundColor: 'primary.dark',
         }}
       >
-        <label>Today's temperature is {temp}°C</label>
+        <Typography variant='h6'>Today's temperature is {temp}°C</Typography>
       </Box>
-      <h1>The sky is looking {weather}</h1>
+
+      <Box
+        component='span'
+        sx={{
+          m: 1,
+          p: 5,
+          flexDirection: 'center',
+          backgroundColor: 'primary.dark',
+        }}
+      >
+        <Typography variant='h6'>The sky is looking {weather}</Typography>
+      </Box>
+
       <Button variant='contained' size='large' href='/todo'>
         Todo
       </Button>
