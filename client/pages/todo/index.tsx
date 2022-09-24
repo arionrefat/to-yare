@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import NewTodo from "./components/NewTodo";
-import TodoList from "./components/TodoList";
-import { createTodo, deleteTodo, getTodo } from "./models/todo";
+import NewTodo from "../../components/NewTodo";
+import TodoList from "../../components/TodoList";
+import { createTodo, deleteTodo, getTodo } from "../../utils/models/todo";
 
 function Todos() {
   const queryClient = useQueryClient();
