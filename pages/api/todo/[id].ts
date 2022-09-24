@@ -15,6 +15,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       res.status(200).json(todo);
     }
   } catch (err: any) {
-    res.status(400).json(err);
+    res.status(400).json(process.env.NODE_ENV === "production" ? "Something went wrong. Try again later" : err);
   }
 }

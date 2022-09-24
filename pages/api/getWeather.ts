@@ -12,6 +12,6 @@ export default async function handler(_: NextApiRequest, res: NextApiResponse) {
     const { data } = await axios.get(url(["23.8245", "90.4056"], "metric"));
     res.status(200).json(data);
   } catch (err: any) {
-    res.status(400).json(err?.response);
+    res.status(400).json(process.env.NODE_ENV === "production" ? "Cannot get weather" : err?.response);
   }
 }
